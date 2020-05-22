@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+
 int main()
 {
     char Username[20];
@@ -9,7 +11,13 @@ int main()
     SayHi(Username);
     Gaming();
     Socialmedia();
-    printf("Thank you\n");
+    Homework();
+    printf("CREDITS\n");
+    printf("Artistic Idea: your nostril\n");
+    printf("Designed by: toilet paper\n");
+    printf("QA by: underpaid debugger\n");
+    printf("Distributed by: manual bots\n");
+    printf("Executed by: Guillotine\n");
     return 0;
 }
 int cube (int Userage){
@@ -25,7 +33,67 @@ void SayHi (char name[]){
     }else {Birthdates();
     }
 }
+void Gameover (){
+    char Username1[]="Big Loser";
+    printf("Game Over\n");
+    printf("It was nice too meet you\n");
+    printf("You'll surely be missed\n");
+    printf("%s\n",Username1);
+    SayHi(Username1);}
+void BronzeAge(){
+int guesscount=0;
+int guesslimit=5;
+int favnum=14;
+int Xnum;
+int outofguesses=0;
+while (Xnum != favnum && outofguesses==0){
+    if (guesscount<guesslimit){
+        printf("Welcome to the Bronze Age\n");
+        printf ("Guess my favorite number:\n");
+        scanf ("%d",&Xnum);
+        guesscount++;
+    }else{
+        outofguesses=1;}
+}
+if (outofguesses==1){
+   printf("Prepare to travel in time\n");
+        StoneAge();
+} else {
+    printf("You were only going to get out of here dead!\n");
+    Credits();}
+}
+void StoneAge(){
+char START [20];
+printf ("Welcome to the Stone Age\n");
+printf ("press START to start the game\n");
+scanf ("%s",START);
+int Userbirth;
+printf ("Please state the year you were born\n");
+scanf ("%d",&Userbirth);
+printf ("So, you were born in %d B.C.?\n",Userbirth);
+printf ("You are really old!\n");
+if (Userbirth<1900){
+    Gameover();
+}else BronzeAge(); }
+
+struct chonguis {
+char cname[50];
+char cnick [50];
+int cbirth;
+double sexrate};
+
 void HangingOut(){
+    struct chonguis ex1;
+        ex1.cbirth=1992;
+        ex1.sexrate=7.5;
+        strcpy (ex1.cname,"Anthony");
+        strcpy (ex1.cnick,"Shorty");
+    struct chonguis ex2;
+        ex2.cbirth=1996;
+        ex2.sexrate=3.5;
+        strcpy (ex2.cname, "Jenna");
+        strcpy (ex2.cnick, "Flatty");
+    char gender;
     char ermi []="Emiliano";
     char chamo []="Agustina";
     char juana  []="Joyce";
@@ -42,7 +110,8 @@ void HangingOut(){
     printf("%s is %s's little sister\n",morsik,chamo);
     printf("%s loves %s\n",morsik,passion);
     printf("Who does %s hang out with?\n",morsik);
-    scanf("%s",chongo);
+    fflush (stdin);
+    gets (chongo);
     printf("%s seems nice!\n",chongo);
     printf("%s surely is %s's friend\n",chongo,chamo);
     printf("%s drinks %d %s per day \n",gollum,BOTTLES,booze);
@@ -54,16 +123,29 @@ void HangingOut(){
     printf("%s drank %f %s\n",chongo,ceil(82.5),booze);
     printf("%s drank %f %s\n",juana,floor(0.783),booze);
     printf("Who drank more %s?\n",booze);
-    scanf("%s",&Xdrinker); /* don't include "\n" in here */
+    fflush (stdin);
+    gets(Xdrinker); /* don't include "\n" in here */
     printf("You drink more %s than %s!\n",booze,Xdrinker);
+    printf("Choose your gender (m-f)\n");
+    scanf (" %c",&gender);
+    switch (gender){
+        case 'm':
+            printf ("Your name is %s\n",ex1.cname);
+            printf ("I'll call you %s\n",ex1.cnick);
+            printf ("You were born in %d\n",ex1.cbirth);
+            printf ("You kiss %f times per week\n",ex1.sexrate);
+        break;
+        case 'f':
+            printf ("Your name is %s\n",ex2.cname);
+            printf ("I'll call you %s\n",ex2.cnick);
+            printf ("You were born in %d\n",ex2.cbirth);
+            printf ("You kiss %f times per week\n",ex2.sexrate);
+        break;
+        default:
+            printf ("Are you even human?\n");
+            BronzeAge();
+    }
 }
-char Gameover (){
-    char Username1[]="Big Loser";
-    printf("Game Over\n");
-    printf("It was nice too meet you\n");
-    printf("You'll surely be missed\n");
-    printf("%s\n",Username1);
-    SayHi(Username1);}
 void Birthdates(){
     char ermi []="Emiliano";
     char chamo []="Agustina";
@@ -80,12 +162,37 @@ void Birthdates(){
     printf("If %s was born in %d, how much older is %s than her?\n",morsik,birth[1],chamo);
     scanf ("%d",&agediff);
     printf ("So %s was born in %d\n",chamo,birth[1]-agediff);
-    if (Xage1<agediff || 8>agediff){
+    if (Xage1<agediff || 8>=agediff){
         Gameover();
     }else if (10<agediff){
     printf ("You've won the Troll Prize!\n");
-    } else {
+    }else if (agediff==9) {
     printf ("You've nailed it!\n");}
+    else {
+    printf ("Almost there!\n");}
+    printf ("Let's create an avatar!\n");
+    struct chonguis jr;
+    printf ("Insert a name:\n");
+    fflush (stdin);
+    gets (jr.cname);
+    printf ("Don't name your kids like that!\n");
+    printf ("Insert a nickname:\n");
+    fflush (stdin);
+    gets (jr.cname);
+    printf ("That's bullying!\n");
+    printf ("State year of birth:\n");
+    scanf ("%d",&jr.cbirth);
+    if (jr.cbirth<1985){
+        printf("%s is older than %s\n",jr.cname,chamo);
+        StoneAge();
+    }else if (1985<=jr.cbirth && jr.cbirth<1991){
+        printf ("%s is older than %s\n",jr.cname,ermi);
+    }else if (1991<=jr.cbirth && jr.cbirth<1994){
+        printf ("%s is older than %s\n",jr.cname,morsik);
+    }else {
+    printf ("%s is really young!\n",jr.cname);
+    }
+
 
 }
 void Gaming(){
@@ -98,6 +205,7 @@ void Gaming(){
     const double AVG =3.5;
     char game [20];
     double average;
+    char option;
     printf("What's %s's favourite videogame?\n",juana);
     scanf ("%s",&game);
     printf("%s scored %f in %s\n",juana,AVG,game);
@@ -105,6 +213,20 @@ void Gaming(){
     scanf("%lf",&average); /* always put "%lf" when scanning decimals */
     printf("Well, it's really %f!\n",floor(average));
     printf ("Scoring is only in integers\n");
+    printf ("The Roller Coaster has broken down!\n");
+    printf ("Choose an option:\n");
+    printf ("a. repair the Roller Coaster\n");
+    printf ("b. ride the Roller Coaster\n");
+    printf ("c. play another game\n");
+    scanf (" %c",&option);
+    if (option=='a'){
+        printf ("Got to find %s; he's having some wine\n",gollum);
+        HangingOut ();
+    }else if (option=='b'){
+        StoneAge();
+    }else if (option=='c'){
+    printf ("Let's make a story with %s\n",novia);
+    }else {Gameover ();}
 }
 int Likediff (int likes1,int likes2){
     int result;
@@ -124,6 +246,7 @@ void Socialmedia () {
     int likes1;
     int likes2;
     int Followers =27;
+    int seconds;
     printf("%s has %d followers in TikTok\n",novia,Followers);
     printf("How many likes does %s have?\n",novia);
     scanf("%d",&likes1);
@@ -133,4 +256,57 @@ void Socialmedia () {
     }else{printf ("How popular you are!\n");
     }
     printf("So, those are %d likes of difference!\n",Likediff(likes1,likes2));
+    if (likes2==0){
+    StoneAge();
+    }else {
+    printf("You can have my like!\n");}
+    printf ("It's about to be New Year\n");
+    printf ("We'll take a picture\n");
+    printf ("How many seconds 'till New Year?\n");
+    scanf ("%d",&seconds);
+    while (seconds>=0){
+        printf ("%d\n",seconds);
+        seconds--;
+    }
+    printf ("Happy new year!\n!");
 }
+Homework (){
+char juana []="Joyce";
+char grade;
+printf ("%s has been doing the homework\n", juana);
+printf ("Give her a grade (A-G):\n");
+scanf (" %c",&grade);
+switch (grade){
+    case 'A':
+        printf ("Avengers!\n");
+        break;
+    case 'B':
+        printf ("Braveheart!\n");
+        break;
+    case 'C':
+        printf ("Citizen Kane!\n");
+        break;
+    case 'D':
+        printf ("Dunkerque!\n");
+        break;
+    case 'E':
+        printf ("Enigma Code!\n");
+        break;
+    case 'F':
+        printf ("Farenheit 911!\n");
+        break;
+    case 'G':
+        printf ("Ghostbusters!\n");
+        break;
+    default: StoneAge();}
+printf("Apparently, it was a movie catalog!\n");
+printf("I'll aim hard for that 'G' now!\n");
+}
+void Credits(){
+    printf("CREDITS\n");
+    printf("Artistic Idea: accountant\n");
+    printf("Designed by: Al-Zeimer\n");
+    printf("QA by: insecure guy\n");
+    printf("Distributed by: spam\n");
+    printf("Executed by: drunkard\n");
+    }
