@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
-int main()
-{
+int main(){
     char Username[20];
     printf("Hello, what's your name?\n");
     fgets(Username,19,stdin);
@@ -12,6 +9,7 @@ int main()
     Gaming();
     Socialmedia();
     Homework();
+    Bricklaying();
     printf("CREDITS\n");
     printf("Artistic Idea: your nostril\n");
     printf("Designed by: toilet paper\n");
@@ -33,7 +31,7 @@ void SayHi (char name[]){
     }else {Birthdates();
     }
 }
-void Gameover (){
+void Gameover(){
     char Username1[]="Big Loser";
     printf("Game Over\n");
     printf("It was nice too meet you\n");
@@ -46,7 +44,7 @@ int guesslimit=5;
 int favnum=14;
 int Xnum;
 int outofguesses=0;
-while (Xnum != favnum && outofguesses==0){
+while(Xnum != favnum && outofguesses==0){
     if (guesscount<guesslimit){
         printf("Welcome to the Bronze Age\n");
         printf ("Guess my favorite number:\n");
@@ -55,7 +53,7 @@ while (Xnum != favnum && outofguesses==0){
     }else{
         outofguesses=1;}
 }
-if (outofguesses==1){
+if(outofguesses==1){
    printf("Prepare to travel in time\n");
         StoneAge();
 } else {
@@ -75,13 +73,11 @@ printf ("You are really old!\n");
 if (Userbirth<1900){
     Gameover();
 }else BronzeAge(); }
-
-struct chonguis {
+struct chonguis{
 char cname[50];
 char cnick [50];
 int cbirth;
 double sexrate};
-
 void HangingOut(){
     struct chonguis ex1;
         ex1.cbirth=1992;
@@ -143,8 +139,7 @@ void HangingOut(){
         break;
         default:
             printf ("Are you even human?\n");
-            BronzeAge();
-    }
+            BronzeAge();}
 }
 void Birthdates(){
     char ermi []="Emiliano";
@@ -190,10 +185,7 @@ void Birthdates(){
     }else if (1991<=jr.cbirth && jr.cbirth<1994){
         printf ("%s is older than %s\n",jr.cname,morsik);
     }else {
-    printf ("%s is really young!\n",jr.cname);
-    }
-
-
+    printf ("%s is really young!\n",jr.cname);}
 }
 void Gaming(){
     char ermi []="Emiliano";
@@ -207,7 +199,8 @@ void Gaming(){
     double average;
     char option;
     printf("What's %s's favourite videogame?\n",juana);
-    scanf ("%s",&game);
+    fflush (stdin);
+    gets(game);
     printf("%s scored %f in %s\n",juana,AVG,game);
     printf("OK, and how many points scored %s?\n",juana);
     scanf("%lf",&average); /* always put "%lf" when scanning decimals */
@@ -228,20 +221,7 @@ void Gaming(){
     printf ("Let's make a story with %s\n",novia);
     }else {Gameover ();}
 }
-int Likediff (int likes1,int likes2){
-    int result;
-    if (likes1>likes2){
-        result=likes1-likes2;
-    }
-    else {result=likes2-likes1;
-    }
-}
 void Socialmedia () {
-    char ermi []="Emiliano";
-    char chamo []="Agustina";
-    char juana  []="Joyce";
-    char gollum []="Rodolfo";
-    char morsik []="Sofia";
     char novia []="Estela";
     int likes1;
     int likes2;
@@ -252,10 +232,12 @@ void Socialmedia () {
     scanf("%d",&likes1);
     printf("How many likes do you have?\n");
     scanf("%d",&likes2);
-    if (likes1>likes2){printf("How unlucky you are!\n");
+    if (likes1>likes2){
+            printf("How unlucky you are!\n");
+            printf("So, those are %d likes of difference!\n",likes1-likes2);
     }else{printf ("How popular you are!\n");
+          printf("So, those are %d likes of difference!\n",likes2-likes1);
     }
-    printf("So, those are %d likes of difference!\n",Likediff(likes1,likes2));
     if (likes2==0){
     StoneAge();
     }else {
@@ -264,10 +246,9 @@ void Socialmedia () {
     printf ("We'll take a picture\n");
     printf ("How many seconds 'till New Year?\n");
     scanf ("%d",&seconds);
-    while (seconds>=0){
+    while (seconds>=0 || seconds>100){
         printf ("%d\n",seconds);
-        seconds--;
-    }
+        seconds--;}
     printf ("Happy new year!\n!");
 }
 Homework (){
@@ -310,3 +291,30 @@ void Credits(){
     printf("Distributed by: spam\n");
     printf("Executed by: drunkard\n");
     }
+void Bricklaying(){
+char gollum []= "Rodolfo";
+int bricks;
+int day = 1;
+int brickcourse;
+printf ("%s wants to make a wall\n",gollum);
+printf ("How many courses of brick will he put up?\n");
+scanf ("%d",&brickcourse);
+for (bricks = 1; bricks <= brickcourse; bricks++){
+    printf ("On day %d, %s laid %d bricks\n",day++,gollum,bricks*13);
+    }
+    char Xlocation;
+    printf ("What an unlucky choice of bricks\n");
+    printf ("Do you want to know where %s is? (y-n)\n", gollum);
+    scanf (" %c",&Xlocation);
+    switch (Xlocation){
+case 'y':
+    printf("%p\n",&Xlocation);
+    printf("Looking into other's memories, uh?\n");
+    printf("Have you revalidated your psychology degree?\n");
+    break;
+case 'n':
+    printf("Thanks for respecting other's privacy\n");
+    break;
+    default:Gameover();
+    }
+}
