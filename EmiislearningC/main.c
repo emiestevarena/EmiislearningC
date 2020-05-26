@@ -10,6 +10,7 @@ int main(){
     Socialmedia();
     Homework();
     Bricklaying();
+    Work();
     printf("CREDITS\n");
     printf("Artistic Idea: your nostril\n");
     printf("Designed by: toilet paper\n");
@@ -317,4 +318,49 @@ case 'n':
     break;
     default:Gameover();
     }
+}
+void Work(){
+    int i=0;
+    int j=0;
+    int k=0;
+    int l=0;
+    char* firstname[6]={"Matt","George","Anna","Jane","Martin","Jenna"};
+    char* lastname [4]={"Smith","Ramirez","Locke","Doe"};
+    int clientnumber=0;
+    int hcare_company_int [20]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+    int practice [50]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50}; /* consultorios (1-50) */
+    char* specialty [4]= {"Pediatrics","Psychology","Cardiology","Geriatrics"};
+    float price [4]={987.50,1035.89,789.66,2045.63};
+    char ermi[]="Emiliano";
+    char y_n;
+    printf("%s id doing a bit of back-office.\n",ermi);
+    printf("Wanna see his work?(y-n)\n");
+    scanf(" %c",&y_n);
+    if (y_n=='y'){
+    do{
+    printf("Client No.: %d\n",clientnumber);
+    printf("Full Name: %s, %s\n",lastname[j],firstname[i]);
+    printf("Health Care Insurance Company No: %d\n",hcare_company_int[k]);
+    printf("Practice No.: %d\n",practice[l]);
+    printf("Specialty: %s\n",specialty[j]);
+    printf("Price: %f\n",price[j]);
+    printf("\n");
+    clientnumber++;
+    if (i==5){
+        i=0;
+    }else{i++;}
+    if (j==3){
+        j=0;}
+    else{j++;}
+    if (k==19){
+        k=0;}
+    else{k++;}
+   if (l==49){
+        l=0;}
+    else{l++;}
+    }while(clientnumber<=200);
+    printf ("Gotta love automation!\n");
+}else if(y_n=='n'){
+printf("How lazy!\n");}
+else{StoneAge();}
 }
