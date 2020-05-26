@@ -332,7 +332,14 @@ void Work(){
     char* specialty [4]= {"Pediatrics","Psychology","Cardiology","Geriatrics"};
     float price [4]={987.50,1035.89,789.66,2045.63};
     char ermi[]="Emiliano";
+    char chamo []="Agustina";
     char y_n;
+    int X;
+    int mx_1[3][2]={{1,-2},
+                    {-3,2},
+                    {5,6} };
+    int mx_2[2][3]={{3,4,-6},
+                    {7,-8,1}};
     printf("%s id doing a bit of back-office.\n",ermi);
     printf("Wanna see his work?(y-n)\n");
     scanf(" %c",&y_n);
@@ -363,4 +370,15 @@ void Work(){
 }else if(y_n=='n'){
 printf("How lazy!\n");}
 else{StoneAge();}
+printf("%s is doing some math, what will be the result?\n",chamo);
+printf("%d ",(mx_1[0][0]*mx_2[0][0])+(mx_1[0][1]*mx_2[1][0]));
+printf("%d ",(mx_1[0][0]*mx_2[0][1])+(mx_1[0][1]*mx_2[1][1]));
+printf("%d\n",(mx_1[0][0]*mx_2[0][2])+(mx_1[0][1]*mx_2[1][2]));
+printf("%d ",(mx_1[1][0]*mx_2[0][0])+(mx_1[1][1]*mx_2[1][0]));
+printf("%d ",(mx_1[1][0]*mx_2[0][1])+(mx_1[1][1]*mx_2[1][1]));
+printf("%d\n",(mx_1[1][0]*mx_2[0][2])+(mx_1[1][1]*mx_2[1][2]));
+printf("%d ",(mx_1[2][0]*mx_2[0][0])+(mx_1[2][1]*mx_2[1][0]));
+printf("%d ",(mx_1[2][0]*mx_2[0][1])+(mx_1[2][1]*mx_2[1][1]));
+printf("%d\n",(mx_1[2][0]*mx_2[0][2])+(mx_1[2][1]*mx_2[1][2]));
+printf("Welcome to the matrix!\n");
 }
